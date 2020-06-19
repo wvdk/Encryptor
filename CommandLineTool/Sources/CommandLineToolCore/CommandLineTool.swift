@@ -1,4 +1,5 @@
 import Foundation
+import Files
 
 public final class CommandLineTool {
     
@@ -22,7 +23,13 @@ public final class CommandLineTool {
             throw Error.missingFileName
         }
         
-        print("Hello, \(arguments)")
+        let fileName = arguments[1]
+ 
+        do {
+            try Folder.current.createFile(at: fileName)
+        } catch {
+            throw Error.failedToCreateFile
+        }
     }
     
 }
