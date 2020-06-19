@@ -6,6 +6,7 @@ let package = Package(
     name: "CommandLineTool",
     dependencies: [
         .package(
+            name: "Files",
             url: "https://github.com/johnsundell/files.git",
             from: "4.0.0"
         )
@@ -16,9 +17,6 @@ let package = Package(
             dependencies: ["CommandLineToolCore"]),
         .target(
             name: "CommandLineToolCore",
-            dependencies: ["Files"]),
-        .testTarget(
-            name: "CommandLineToolTests",
-            dependencies: ["CommandLineTool"]),
+            dependencies: ["Files"])
     ]
 )
