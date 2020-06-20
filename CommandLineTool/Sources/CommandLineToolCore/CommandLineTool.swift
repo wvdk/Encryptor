@@ -15,15 +15,19 @@ public final class CommandLineTool {
             throw Error.missingFileName
         }
         
+        let originalFileName = arguments[1]
         
-        guard let originalFile = try? Folder.current.file(at: arguments[1]),
+        guard let originalFile = try? Folder.current.file(at: originalFileName),
             let originalData = try? originalFile.read() else {
             throw Error.couldNotLoadFile
         }
         
         let encryptedData = RNCryptor.encrypt(data: originalData, withPassword: "1234")
         
-        let targetFileName = arguments[2]
+        var targetFileName = "\(originalFileName).enc"
+        if arguments.count > 2 {
+            targetFileName = arguments[2]
+        }
         
         do {
             try Folder.current.createFile(at: targetFileName, contents: encryptedData)
