@@ -24,7 +24,7 @@ public final class CommandLineTool {
         
         let encryptedData = RNCryptor.encrypt(data: originalData, withPassword: "1234")
         
-        var targetFileName = "\(originalFileName).enc"
+        var targetFileName = "\(originalFileName).e"
         if arguments.count > 2 {
             targetFileName = arguments[2]
         }
