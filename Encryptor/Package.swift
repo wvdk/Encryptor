@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "CommandLineTool",
+    name: "Encryptor",
     dependencies: [
         .package(
             name: "Files",
@@ -13,10 +13,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "CommandLineTool",
-            dependencies: ["CommandLineToolCore"]),
+            name: "Encryptor",
+            dependencies: ["EncryptorCore"]),
         .target(
-            name: "CommandLineToolCore",
+            name: "EncryptorCore",
             dependencies: ["Files"])
     ]
 )

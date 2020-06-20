@@ -1,6 +1,6 @@
-import CommandLineToolCore
+import EncryptorCore
 
-let tool = CommandLineTool()
+let tool = Encryptor()
 
 do {
     try tool.run()

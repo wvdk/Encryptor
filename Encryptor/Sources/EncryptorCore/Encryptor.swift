@@ -1,7 +1,7 @@
 import Foundation
 import Files
 
-public final class CommandLineTool {
+public final class Encryptor {
     
     private let arguments: [String]
     
